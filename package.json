@@ -65,5 +65,9 @@
       "css-tree@2.3.1": "patches/css-tree@2.3.1.patch",
       "@types/css-tree@2.3.1": "patches/@types__css-tree@2.3.1.patch"
     }
+  },
+  "volta": {
+    "node": "18.17.1",
+    "pnpm": "8.4.0"
   }
 }
