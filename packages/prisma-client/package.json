@@ -10,6 +10,9 @@
     "checks": "pnpm typecheck",
     "dev": "prisma generate --watch & build-package --watch --no-generated-as-entries",
     "build": "prisma format && prisma generate && build-package --no-generated-as-entries",
+    "build-tsc": "pnpm build-tsc:esm",
+    "build-tsc:esm": "tsc --project tsconfig.tsc.json",
+    "build-tsc:cjs": "tsc --module commonjs --target es5 --outDir lib/cjs",
     "dts": "tsc --declarationDir lib",
     "migrations": "./migrations-cli/cli.ts"
   },

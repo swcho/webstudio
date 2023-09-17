@@ -1,0 +1,6 @@
+{
+  "extends": "@webstudio-is/tsconfig/base.tsc.json",
+  "compilerOptions": {
+    "outDir": "lib"
+  }
+}

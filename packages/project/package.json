@@ -10,6 +10,9 @@
     "checks": "pnpm typecheck",
     "dev": "build-package --watch",
     "build": "build-package",
+    "build-tsc": "pnpm build-tsc:esm",
+    "build-tsc:esm": "tsc --project tsconfig.tsc.json",
+    "build-tsc:cjs": "tsc --module commonjs --target es5 --outDir lib/cjs",
     "dts": "tsc --project tsconfig.dts.json"
   },
   "dependencies": {

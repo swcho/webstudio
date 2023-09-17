@@ -1,0 +1,42 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "pnpm dev:builder",
+      "request": "launch",
+      "runtimeArgs": ["dev:builder"],
+      "runtimeExecutable": "pnpm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/apps/builder/app/entry.server.tsx",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
+    },
+    // [Visual Studio Code로 NuxtJS 디버깅하기 | 우당탕탕 개발자](https://yeonseo.github.io/posts/NuxtWithVSCode-post/)
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "client: chrome",
+      // "port": 9222,
+      "url": "http://localhost:3002",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${workspaceRoot}/*"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "fullstack",
+      "configurations": ["pnpm dev:builder", "client: chrome"]
+    }
+  ]
+}
