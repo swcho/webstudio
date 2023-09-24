@@ -107,7 +107,7 @@ export const Workspace = ({
 
   return (
     <div
-      className={workspaceStyle()}
+      className={workspaceStyle() + " Workspace"}
       onClick={handleWorkspaceClick}
       ref={workspaceRef}
     >

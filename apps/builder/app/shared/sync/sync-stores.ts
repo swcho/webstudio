@@ -171,6 +171,7 @@ const syncStoresState = (name: SyncEventSource, publish: Publish) => {
       if (source === name) {
         return;
       }
+      console.log("subscribe", name, data);
       for (const { namespace, value } of data) {
         // apply immerhin stores data
         const container = store.containers.get(namespace);

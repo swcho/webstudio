@@ -131,6 +131,7 @@ const sharedDropOptions = {
 };
 
 export const useDragAndDrop = () => {
+  console.log("useDragAndDrop");
   const state = useRef({ ...initialState });
 
   const autoScrollHandlers = useAutoScroll({ fullscreen: true });
@@ -236,6 +237,7 @@ export const useDragAndDrop = () => {
     },
 
     onStart({ data: dragInstanceSelector }) {
+      console.log("onStart");
       publish({
         type: "dragStart",
         payload: {
@@ -252,6 +254,7 @@ export const useDragAndDrop = () => {
       });
     },
     onEnd({ isCanceled }) {
+      console.log("onEnd");
       publish({
         type: "dragEnd",
         payload: { isCanceled },

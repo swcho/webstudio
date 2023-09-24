@@ -236,6 +236,8 @@ export const Canvas = ({ params }: CanvasProps): JSX.Element | null => {
   const instances = useStore(instancesStore);
   const elements = useElementsTree(components, instances, params);
 
+  console.log("Canvas", { elements });
+
   if (components.size === 0 || instances.size === 0) {
     return (
       <body>

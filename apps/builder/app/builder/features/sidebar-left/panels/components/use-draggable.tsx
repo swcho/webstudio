@@ -135,6 +135,8 @@ export const useDraggable = ({
       return elementToComponentName(element, metaByComponentName);
     },
     onStart({ data: componentName }) {
+      // eslint-disable-next-line no-console
+      console.log("onStart", { componentName });
       setDragComponent(componentName);
       publish({
         type: "dragStart",
